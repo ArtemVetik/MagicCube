@@ -1004,6 +1004,7 @@ GameObject:
   - component: {fileID: 609343832}
   - component: {fileID: 609343833}
   - component: {fileID: 609343834}
+  - component: {fileID: 609343835}
   m_Layer: 0
   m_Name: DamageLaserHandler
   m_TagString: Untagged
@@ -1052,6 +1053,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _laser: {fileID: 1878776725}
+  _view: {fileID: 609343835}
+--- !u!114 &609343835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609343831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8425b3f973860b441a1c2831703a7fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lineTemplate: {fileID: 8691782557900628442, guid: 7b74c48e9a5abe74c8645251912c0a07, type: 3}
 --- !u!1001 &633753023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3680,6 +3695,7 @@ GameObject:
   - component: {fileID: 1482354052}
   - component: {fileID: 1482354054}
   - component: {fileID: 1482354053}
+  - component: {fileID: 1482354055}
   m_Layer: 0
   m_Name: HealLaserHandler
   m_TagString: Untagged
@@ -3714,6 +3730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _laser: {fileID: 400210220}
+  _view: {fileID: 1482354055}
 --- !u!114 &1482354054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3728,6 +3745,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 3403826}
   _abilityObject: {fileID: 1482354053}
+--- !u!114 &1482354055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482354051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8425b3f973860b441a1c2831703a7fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lineTemplate: {fileID: 2148783478700885405, guid: 258a98e278d63b74d961593716e055a5, type: 3}
 --- !u!1 &1505194388
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ namespace Agava.MagicCube.Abilities.Presenter
         private LaserAbility _laser;
         private IMovementProvider _movementProvider;
 
+        public event Action Reseted;
+
         public ITimeout Timeout => _laser.Timeout;
 
         private void Awake()
@@ -22,7 +24,10 @@ namespace Agava.MagicCube.Abilities.Presenter
         private void Update()
         {
             if (_movementProvider.IsMoving && _laser.IsActive)
+            {
                 _laser.Reset();
+                Reseted?.Invoke();
+            }
 
             _laser.Update(Time.deltaTime);
         }

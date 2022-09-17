@@ -7,6 +7,7 @@ namespace Agava.MagicCube.Abilities.Presenter
     public class LaserPresenterInput : MonoBehaviour, IAbility
     {
         [SerializeField] private LaserPresenter _laser;
+        [SerializeField] private LaserView _view;
 
         private Camera _mainCamera;
 
@@ -19,6 +20,16 @@ namespace Agava.MagicCube.Abilities.Presenter
             _mainCamera = Camera.main;
         }
 
+        private void OnEnable()
+        {
+            _laser.Reseted += OnLaserReseted;
+        }
+
+        private void OnDisable()
+        {
+            _laser.Reseted -= OnLaserReseted;
+        }
+
         public bool Use()
         {
             var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -27,12 +38,18 @@ namespace Agava.MagicCube.Abilities.Presenter
                 if (hitInfo.collider.TryGetComponent(out IHealthTarget healthTarget))
                 {
                     _laser.Use(healthTarget);
+                    _view.Create(transform, healthTarget);
                     Used?.Invoke();
                     return true;
                 }
             }
 
             return false;
+        }
+
+        private void OnLaserReseted()
+        {
+            _view.Release();
         }
     }
 }

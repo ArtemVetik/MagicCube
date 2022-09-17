@@ -15,6 +15,7 @@ namespace Agava.MagicCube.AbilitiesMediator
         public event UnityAction<Transform> Healing;
 
         public int CurrentHealth => _healthSource.Health.Value;
+        public Vector3 Position => transform.position;
 
         private void Awake()
         {
