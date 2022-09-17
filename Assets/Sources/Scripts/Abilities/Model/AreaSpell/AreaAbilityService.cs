@@ -31,7 +31,7 @@ namespace Agava.MagicCube.Abilities.Model
             }
         }
 
-        internal AreaAbility Create(Vector3 center)
+        internal AreaAbility Create(Transform center)
         {
             if (_timeout.Completed == false)
                 throw new InvalidOperationException("Timeout not completed");

@@ -1,3 +1,4 @@
+using UnityEngine;
 using System;
 
 namespace Agava.MagicCube.Abilities.Model
@@ -8,10 +9,12 @@ namespace Agava.MagicCube.Abilities.Model
 
         private IHealthTarget _healthTarget;
         private readonly Timeout _timeout;
+        private readonly Transform _pivot;
 
-        internal LaserAbility()
+        internal LaserAbility(Transform pivot)
         {
             _timeout = new Timeout(TimeoutValue);
+            _pivot = pivot;
         }
 
         internal bool IsActive => _healthTarget != null;
@@ -38,9 +41,9 @@ namespace Agava.MagicCube.Abilities.Model
             if (_healthTarget == null)
                 return;
 
-            OnAbilityUseFrame(_healthTarget);
+            OnAbilityUseFrame(_healthTarget,_pivot);
         }
 
-        internal abstract void OnAbilityUseFrame(IHealthTarget target);
+        internal abstract void OnAbilityUseFrame(IHealthTarget target, Transform pivot);
     }
 }

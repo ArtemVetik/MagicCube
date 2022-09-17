@@ -18,8 +18,11 @@ namespace Agava.MagicCube.Abilities.Presenter
 
         public void Create(Vector3 position)
         {
-            var ability = _abilityService.Create(position);
-            Instantiate(_template).Init(ability);
+            var abilityPresenter = Instantiate(_template);
+            abilityPresenter.transform.position = position;
+
+            var ability = _abilityService.Create(abilityPresenter.transform);
+            abilityPresenter.Init(ability);
         }
     }
 }

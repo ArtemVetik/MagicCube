@@ -1,6 +1,7 @@
 using UnityEngine;
 using Agava.MagicCube.EnemyHealth.Presenter;
 using Agava.MagicCube.Abilities.Model;
+using UnityEngine.Events;
 
 namespace Agava.MagicCube.AbilitiesMediator
 {
@@ -10,6 +11,9 @@ namespace Agava.MagicCube.AbilitiesMediator
 
         private IHealthSource _healthSource;
 
+        public event UnityAction<Transform> Damaged;
+        public event UnityAction<Transform> Healing;
+
         public int CurrentHealth => _healthSource.Health.Value;
 
         private void Awake()
@@ -17,14 +21,16 @@ namespace Agava.MagicCube.AbilitiesMediator
             _healthSource = _healthSourceObject as IHealthSource;
         }
 
-        public void TakeDamage(int value)
+        public void TakeDamage(int value, Transform from)
         {
             _healthSource.TakeDamage(value);
+            Damaged?.Invoke(from);
         }
 
-        public void Heal(int value)
+        public void Heal(int value, Transform from)
         {
             _healthSource.Heal(value);
+            Healing?.Invoke(from);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Agava.MagicCube.Abilities.Presenter
         private void Awake()
         {
             _movementProvider = _movementProviderObject as IMovementProvider;
-            _laser = CreateLaser();
+            _laser = CreateLaser(transform);
         }
 
         private void Update()
@@ -35,6 +35,6 @@ namespace Agava.MagicCube.Abilities.Presenter
             _laser.Use(target);
         }
 
-        protected abstract LaserAbility CreateLaser();
+        protected abstract LaserAbility CreateLaser(Transform from);
     }
 }

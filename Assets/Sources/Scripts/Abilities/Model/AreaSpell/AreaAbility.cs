@@ -8,11 +8,11 @@ namespace Agava.MagicCube.Abilities.Model
         private const float Radius = 5;
         private const int HealValue = 1;
 
-        private readonly Vector3 _center;
+        private readonly Transform _center;
 
         private float _lifeTime;
 
-        internal AreaAbility(Vector3 center)
+        internal AreaAbility(Transform center)
         {
             _center = center;
         }
@@ -25,10 +25,10 @@ namespace Agava.MagicCube.Abilities.Model
             if (Completed)
                 return;
 
-            var colliders = Physics.OverlapSphere(_center, Radius);
+            var colliders = Physics.OverlapSphere(_center.position, Radius);
             foreach (var collider in colliders)
                 if (collider.TryGetComponent(out IHealthTarget healTarget))
-                    healTarget.Heal(HealValue);
+                    healTarget.Heal(HealValue, _center);
         }
     }
 }
