@@ -1,0 +1,19 @@
+{
+    "name": "AbilitiesMediator",
+    "rootNamespace": "Agava.MagicCube.AbilitiesMediator",
+    "references": [
+        "GUID:a65d9a73e86e8a16094732b640e510ef",
+        "GUID:607dab909ff8b484fbb5751b1b295176",
+        "GUID:a6f4f9690b2e4f74f9e50eeb67cc4e06",
+        "GUID:53eadf34f59ae4e41975e95215ee35ff"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

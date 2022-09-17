@@ -11,6 +11,8 @@ namespace Agava.MagicCube.PlayerMovement
         private ICharacterInputSource _inputSource;
         private NavMeshAgent _agent;
 
+        public bool IsMoving => _inputSource.MovementInput.magnitude != 0;
+
         private void Awake()
         {
             _inputSource = _inputSourceBehaviour as ICharacterInputSource;
