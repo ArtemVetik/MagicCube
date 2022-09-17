@@ -1,12 +1,8 @@
-namespace Agava.MagicCube.Abilities
+namespace Agava.MagicCube.Abilities.Model
 {
     internal class DamageLaser : LaserAbility
     {
         private const int DamageValue = 1;
-
-        internal DamageLaser(IMovementProvider movementProvider)
-            :base(movementProvider)
-        { }
 
         internal override void OnAbilityUseFrame(IHealthTarget target)
         {

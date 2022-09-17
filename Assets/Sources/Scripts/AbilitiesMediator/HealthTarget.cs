@@ -1,6 +1,6 @@
 using UnityEngine;
-using Agava.MagicCube.Abilities;
 using Agava.MagicCube.EnemyHealth.Presenter;
+using Agava.MagicCube.Abilities.Model;
 
 namespace Agava.MagicCube.AbilitiesMediator
 {

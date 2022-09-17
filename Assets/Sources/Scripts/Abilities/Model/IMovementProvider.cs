@@ -1,5 +1,5 @@
 
-namespace Agava.MagicCube.Abilities
+namespace Agava.MagicCube.Abilities.Model
 {
     public interface IMovementProvider
     {

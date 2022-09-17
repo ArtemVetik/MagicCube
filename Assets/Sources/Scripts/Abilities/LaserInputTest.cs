@@ -1,6 +1,7 @@
+using Agava.MagicCube.Abilities.Model;
 using UnityEngine;
 
-namespace Agava.MagicCube.Abilities
+namespace Agava.MagicCube.Abilities.Presenter
 {
     public class LaserInputTest : MonoBehaviour
     {
