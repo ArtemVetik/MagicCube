@@ -1,11 +1,10 @@
 using System;
 
-namespace Agava.MagicCube.Abilities.Model
+namespace Agava.MagicCube.Abilities.View
 {
     public interface ITimeout
     {
-        event Action Started;
-        bool Completed { get; }
+        bool IsCompleted { get; }
         float MaxValue { get; }
         float CurrentValue { get; }
     }

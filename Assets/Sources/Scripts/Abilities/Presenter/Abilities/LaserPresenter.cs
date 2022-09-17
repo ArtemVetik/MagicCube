@@ -1,14 +1,17 @@
 using Agava.MagicCube.Abilities.Model;
+using System;
 using UnityEngine;
 
 namespace Agava.MagicCube.Abilities.Presenter
 {
     internal abstract class LaserPresenter : MonoBehaviour
     {
-        [SerializeField, InterfaceType(typeof(IMovementProvider))] private Object _movementProviderObject;
+        [SerializeField, InterfaceType(typeof(IMovementProvider))] private UnityEngine.Object _movementProviderObject;
 
         private LaserAbility _laser;
         private IMovementProvider _movementProvider;
+
+        public ITimeout Timeout => _laser.Timeout;
 
         private void Awake()
         {
@@ -26,6 +29,9 @@ namespace Agava.MagicCube.Abilities.Presenter
 
         public void Use(IHealthTarget target)
         {
+            if (_movementProvider.IsMoving)
+                throw new InvalidOperationException("It is impossible to use a laser, since the movement is not stopped");
+
             _laser.Use(target);
         }
 

@@ -14,6 +14,8 @@ namespace Agava.MagicCube.Abilities.Model
             _currentValue = 0f;
         }
 
+        public event Action Started;
+
         public bool Completed => _currentValue == 0;
         public float MaxValue => _value;
         public float CurrentValue => _currentValue;
@@ -24,6 +26,7 @@ namespace Agava.MagicCube.Abilities.Model
                 throw new InvalidOperationException("Timeout already executed");
 
             _currentValue = _value;
+            Started?.Invoke();
         }
 
         public void Update(float deltaTime)

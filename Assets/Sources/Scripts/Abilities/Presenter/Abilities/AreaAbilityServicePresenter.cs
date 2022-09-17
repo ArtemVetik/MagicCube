@@ -9,6 +9,8 @@ namespace Agava.MagicCube.Abilities.Presenter
 
         private AreaAbilityService _abilityService;
 
+        public ITimeout Timeout => _abilityService.Timeout;
+
         private void Awake()
         {
             _abilityService = new AreaAbilityService();

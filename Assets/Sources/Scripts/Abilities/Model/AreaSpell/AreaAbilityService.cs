@@ -17,6 +17,8 @@ namespace Agava.MagicCube.Abilities.Model
             _timeout = new Timeout(TimeoutValue);
         }
 
+        internal ITimeout Timeout => _timeout;
+
         internal void Update(float deltaTime)
         {
             _timeout.Update(deltaTime);
