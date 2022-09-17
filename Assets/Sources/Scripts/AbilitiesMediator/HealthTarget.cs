@@ -25,6 +25,9 @@ namespace Agava.MagicCube.AbilitiesMediator
         {
             _healthSource.TakeDamage(value);
             Damaged?.Invoke(from);
+
+            if (_healthSource.Health.Value == 0)
+                Destroy(gameObject);
         }
 
         public void Heal(int value, Transform from)

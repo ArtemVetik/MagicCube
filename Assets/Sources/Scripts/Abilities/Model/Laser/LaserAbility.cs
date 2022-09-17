@@ -38,7 +38,7 @@ namespace Agava.MagicCube.Abilities.Model
         {
             _timeout.Update(deltaTime);
 
-            if (_healthTarget == null)
+            if (_healthTarget == null || _healthTarget.Equals(null))
                 return;
 
             OnAbilityUseFrame(_healthTarget,_pivot);
