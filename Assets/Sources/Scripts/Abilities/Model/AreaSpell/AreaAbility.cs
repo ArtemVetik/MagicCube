@@ -5,7 +5,7 @@ namespace Agava.MagicCube.Abilities.Model
     internal class AreaAbility
     {
         private const float MaxLifetime = 15f;
-        private const float Radius = 5;
+        private const float Radius = 15;
         private const int HealValue = 1;
 
         private readonly Transform _center;
